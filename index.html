@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>I'm a map</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+	<div id="top-bar">
+		<div id="search">
+			<input data-bind="value: searchFilter, valueUpdate: 'afterkeydown'" placeholder="search" class="search-input"/>
+		</div>
+		<div id="filters" data-bind="foreach: filters">
+			<div class="filter"><input type="checkbox" data-bind="checked: $data.on" /><label class="filter-label" data-bind="text: $data.name, click: $parent.toggleFilter.bind($data)"></label></div>
+		</div>
+	</div>
+
+	<main>
+		<div id="places">
+			<ul data-bind="foreach: filteredPlaces" id="place-list">
+				<li class="place-item" data-bind="click: $parent.showPlace.bind($data)"><h4 class="place-title" data-bind="text: $data.name"></h4><p class="place-info" data-bind="text: $data.info"></p></li>
+			</ul>
+		</div>
+		<div id="map"></div>
+	</main>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.3.0/knockout-min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4VzwaNGjwWOEayyophRSGjbUel_IV5xg&callback=initMap" onerror="errorHandling()"></script>
+</body>
+</html>
