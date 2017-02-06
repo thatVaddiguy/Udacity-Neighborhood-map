@@ -6,7 +6,7 @@ This project is built using Google Maps API, Foursquare API and knockoutjs frame
 
 ## How to use it
 
-Download the whole folder and open the index.html to see the whole project.
+Download the whole folder and open the index.html to see the whole project or find the live version at https://thatvaddiguy.github.io/Udacity-Neighborhood-map/
 
 ## What it includes
 
